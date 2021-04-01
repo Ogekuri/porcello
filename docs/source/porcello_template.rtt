@@ -1,0 +1,61 @@
+; https://rinohtype.readthedocs.io/en/latest/api/template.html
+
+[TEMPLATE_CONFIGURATION]
+
+name = porcello
+description = Porcello Template
+
+; rinoh --list-templates
+; Installed document templates:
+; - article ( title, abstract, table of contents, contents)
+; - book    ( title, table of contents, contents, index)
+template = book
+
+; document parts
+; ➤ title page
+;   ➤ front matter
+;     ➤ table of contents
+; ➤ contents
+;   ➤ back matter (Book only)
+;     ➤ index
+parts =
+    title
+    front_matter
+    contents
+    ;back_matter
+
+; rinoh --list-stylesheet
+; Installed style sheets:
+; - sphinx
+; - sphinx_article
+; - sphinx_base14
+stylesheet = porcello_template.rts
+
+language = en
+
+; abstract_location is not a supported attribute for Book
+;abstract_location = title
+; table_of_contents is not a supported attribute for Book
+;table_of_contents = true
+
+[SectionTitles]
+contents = 'Contents'
+
+[AdmonitionTitles]
+caution = 'Careful!'
+warning = 'Please be warned'
+
+[VARIABLES]
+paper_size = A4
+
+[title]
+page_number_format = lowercase roman
+end_at_page = left
+
+[contents]
+end_at_page = left
+page_number_format = number
+
+[title_page]
+;background = 'title.pdf' scale=fill
+top_margin = 2cm

@@ -1,0 +1,135 @@
+; https://rinohtype.readthedocs.io/en/latest/api/style.html
+; https://www.mos6581.org/rinohtype/stylesheets.html
+; https://www.mos6581.org/rinohtype/elementstyling.html
+
+[STYLESHEET]
+
+name = porcello
+description = Porcello Stylesheet
+
+; rinoh --list-stylesheet
+; Installed style sheets:
+; - sphinx
+; - sphinx_article
+; - sphinx_base14
+base = sphinx_base14
+
+[VARIABLES]
+mono_typeface = TeX Gyre Cursor
+serif_typeface = TeX Gyre Pagella
+sans_typeface = Tex Gyre Heros
+fallback_typeface = DejaVu Serif
+thin_black_stroke = 0.5pt,#000
+blue = #20435c
+
+[default:Paragraph]
+typeface = $(sans_typeface)
+font_weight = regular
+font_size = 8pt
+line_spacing = fixed(11pt, leading(0))
+text_align = left
+kerning = true
+ligatures = true
+hyphen_lang = en_US
+hyphen_chars = 4
+
+[fallback]
+typeface = $(fallback_typeface)
+
+[body]
+base = default
+space_above = 5pt
+space_below = 0
+text_align = left
+
+
+[emphasis]
+;font_slant = italic
+font_color = #00a
+
+[strong]
+;font_weight = bold
+base = DEFAULT_STYLE
+font_color = #a00
+
+[literal emphasis]
+base = emphasis
+typeface = $(mono_typeface)
+hyphenate = False
+ligatures = False
+
+[literal strong]
+base = strong
+typeface = $(mono_typeface)
+hyphenate = False
+ligatures = False
+
+[inline math]
+base = monospaced
+
+[quote]
+font_slant = italic
+
+[enumerated list]
+margin_left = 8pt
+space_above = 5pt
+space_below = 5pt
+ordered = true
+flowable_spacing = 5pt
+number_format = number
+label_suffix=')'
+horizontal_align = left
+
+[enumerated list item]
+horizontal_align = left
+
+[code block]
+typeface = $(mono_typeface)
+font_size = 8pt
+text_align = left
+indent_first = 0
+space_above = 6pt
+space_below = 4pt
+border = $(thin_black_stroke)
+padding_left = 5pt
+padding_top = 1pt
+padding_bottom = 3pt
+
+
+[header_footer : Paragraph]
+base = default
+typeface = $(sans_typeface)
+font_size = 10pt
+font_weight = bold
+indent_first = 0pt
+tab_stops = 50% center, 100% right
+
+[header]
+base = header_footer
+padding_bottom = 2pt
+border_bottom = $(thin_black_stroke)
+space_below = 24pt
+
+[footer]
+base = header_footer
+padding_top = 4pt
+border_top = $(thin_black_stroke)
+space_above = 18pt
+
+
+[admonition_title_colon : Admonition / ... / StyledText('colon')]
+font_size = 10pt
+
+[chapter_title : LabeledFlowable('chapter title')]
+label_spacing = 1cm
+align_baselines = false
+
+[chapter_title_number : 'chapter title' / Paragraph('number')]
+font_size = 96pt
+text_align = right
+
+[logo_image : InlineImage(filename='_static/porcello_logo.pdf')]
+baseline = 20%
+
+[project_name : StyledText('porcello')]
+font_color = #FF00FF

@@ -1,0 +1,25 @@
+# pip install -r requirements.txt
+requests
+urllib3
+jsonschema
+pillow
+requests-toolbelt
+# documentation (sphinx)
+Sphinx
+sphinxcontrib-applehelp
+sphinxcontrib-devhelp
+sphinxcontrib-htmlhelp
+sphinxcontrib-jsmath
+sphinxcontrib-napoleon
+sphinxcontrib-qthelp
+sphinxcontrib-serializinghtml
+# documentation (sphinx/pdf)
+rinohtype
+rinoh-typeface-dejavuserif
+rinoh-typeface-texgyrecursor
+rinoh-typeface-texgyreheros
+rinoh-typeface-texgyrepagella
+# m2r2 to enable .md for sphinx
+m2r2
+# Application's requirements
+discord.py
